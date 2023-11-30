@@ -5,7 +5,16 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"F:/UnrealProject/Study/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset"
+				"F:/UnrealProject/Study/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"F:/UnrealProject/Study/Content/QuestEditor/QE_TestMap.umap",
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_NPCBase.uasset",
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_Alf.uasset",
+				"F:/UnrealProject/Study/Content/QuestEditor/QE_GameMode.uasset",
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_Citizen.uasset",
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_CityGuard.uasset",
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_SimpleMan.uasset",
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_TimerTheSecond.uasset",
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Datatables/NPCs/NPCExamples.uasset"
 			]
 		}
 	]
