@@ -4344,7 +4344,7 @@ bool UQuestManager::ReachedNPC(AActor* NPCIN, bool CompleteFirstDialogIn)
 
 bool UQuestManager::CommitFirstNPCDialog(AActor* NPCIN)
 {
-	//invalid npc¿?
+	//invalid npc?
 	if (NPCIN == nullptr) return false;
 
 	//NPC manager

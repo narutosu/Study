@@ -14,7 +14,16 @@
 				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_CityGuard.uasset",
 				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_SimpleMan.uasset",
 				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Blueprints/NPCS/BP_NPC_TimerTheSecond.uasset",
-				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Datatables/NPCs/NPCExamples.uasset"
+				"F:/UnrealProject/Study/Plugins/QuestEditor/Content/Examples/Example_Datatables/NPCs/NPCExamples.uasset",
+				"F:/UnrealProject/Study/Content/QuestEditorTest/QE_TestMap.umap",
+				"F:/UnrealProject/Study/Content/QuestEditorTest/QE_GameMode.uasset",
+				"F:/UnrealProject/Study/Content/AscentToolTest/New_Quest.uasset",
+				"F:/UnrealProject/Study/Content/AscentToolTest/Quest1.uasset",
+				"F:/UnrealProject/Study/Content/AscentToolTest/AscentTestMap.umap",
+				"F:/UnrealProject/Study/Content/AscentToolTest/AS_GameMode.uasset",
+				"F:/UnrealProject/Study/Content/AscentToolTest/AS_PlayerController.uasset",
+				"F:/UnrealProject/Study/Content/AscentToolTest/AQS_DataTable.uasset",
+				"F:/UnrealProject/Study/Content/AscentToolTest/Dialog1.uasset"
 			]
 		}
 	]

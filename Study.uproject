@@ -21,6 +21,10 @@
 		{
 			"Name": "QuestEditor",
 			"Enabled": true
+		},
+		{
+			"Name": "AscentToolset",
+			"Enabled": true
 		}
 	]
 }
