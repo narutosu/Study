@@ -20,10 +20,14 @@
 		},
 		{
 			"Name": "QuestEditor",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "AscentToolset",
+			"Enabled": true
+		},
+		{
+			"Name": "Narrative",
 			"Enabled": true
 		}
 	]
