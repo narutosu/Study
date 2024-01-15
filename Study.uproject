@@ -29,6 +29,10 @@
 		{
 			"Name": "Narrative",
 			"Enabled": true
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled": true
 		}
 	]
 }
