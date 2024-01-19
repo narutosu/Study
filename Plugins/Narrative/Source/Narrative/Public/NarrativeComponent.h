@@ -14,7 +14,7 @@
 #include "NarrativeComponent.generated.h"
 
 class UDialogueBlueprint;
-
+class IInputProcessor;
 class UNarrativeDataTask;
 class UQuestState;
 class UQuestGraphNode;
@@ -648,5 +648,15 @@ protected:
 
 	//Internal load function that actually does the work.
 	virtual bool Load_Internal(const TArray<FNarrativeSavedQuest>& SavedQuests, const TMap<FString, int32>& NewMasterList);
+private:
+	/** Input processor to eat all input while the loading screen is shown */
+	TSharedPtr<IInputProcessor> InputPreProcessor;
 
+	/** Prevents input from being used in-game while the loading screen is visible */
+	UFUNCTION(BlueprintCallable , Category = "Input")
+	void StartBlockingInput();
+
+	/** Resumes in-game input, if blocking */
+	UFUNCTION(BlueprintCallable,  Category = "Input")
+	void StopBlockingInput();
 };

@@ -5,7 +5,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "Quest.h"
 #include "StudyCharacter.generated.h"
+
 
 class USpringArmComponent;
 class UCameraComponent;
@@ -20,6 +22,13 @@ class AStudyCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+public:
+	UPROPERTY(Instanced, EditAnywhere, BlueprintReadOnly, Category = "Quest", meta = (Tooltip = "任务资源"))
+	TObjectPtr<UQuest> QuestAssetInstan;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Quest", meta = (Tooltip = "任务资源"))
+	TObjectPtr<UQuest> QuestAsset;
+	
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent* CameraBoom;

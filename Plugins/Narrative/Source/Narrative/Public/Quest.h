@@ -35,7 +35,7 @@ enum class EQuestCompletion : uint8
 	QC_Failed  UMETA(DisplayName = "Failed")
 };
 
-UCLASS(Blueprintable, BlueprintType)
+UCLASS(Blueprintable, BlueprintType,EditInlineNew, DefaultToInstanced)
 class NARRATIVE_API UQuest : public UObject
 {
 	GENERATED_BODY()

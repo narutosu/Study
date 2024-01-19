@@ -18,6 +18,7 @@
 #include "NarrativeEvent.h"
 #include "NarrativeDialogueSettings.h"
 #include "QuestTask.h"
+#include "Framework/Application/IInputProcessor.h"
 
 DEFINE_LOG_CATEGORY(LogNarrative);
 
@@ -26,6 +27,32 @@ static TAutoConsoleVariable<bool> CVarShowQuestUpdates(
 	false,
 	TEXT("Show updates to any of our quests on screen.\n")
 );
+
+class FLoadingScreenInputPreProcessor : public IInputProcessor
+{
+public:
+	FLoadingScreenInputPreProcessor() { }
+	virtual ~FLoadingScreenInputPreProcessor() { }
+
+	bool CanEatInput() const
+	{
+		return !GIsEditor;
+	}
+
+	//~IInputProcess interface
+	virtual void Tick(const float DeltaTime, FSlateApplication& SlateApp, TSharedRef<ICursor> Cursor) override { }
+
+	virtual bool HandleKeyDownEvent(FSlateApplication& SlateApp, const FKeyEvent& InKeyEvent) override { return CanEatInput(); }
+	virtual bool HandleKeyUpEvent(FSlateApplication& SlateApp, const FKeyEvent& InKeyEvent) override { return CanEatInput(); }
+	virtual bool HandleAnalogInputEvent(FSlateApplication& SlateApp, const FAnalogInputEvent& InAnalogInputEvent) override { return CanEatInput(); }
+	virtual bool HandleMouseMoveEvent(FSlateApplication& SlateApp, const FPointerEvent& MouseEvent) override { return CanEatInput(); }
+	virtual bool HandleMouseButtonDownEvent(FSlateApplication& SlateApp, const FPointerEvent& MouseEvent) override { return CanEatInput(); }
+	virtual bool HandleMouseButtonUpEvent(FSlateApplication& SlateApp, const FPointerEvent& MouseEvent) override { return CanEatInput(); }
+	virtual bool HandleMouseButtonDoubleClickEvent(FSlateApplication& SlateApp, const FPointerEvent& MouseEvent) override { return CanEatInput(); }
+	virtual bool HandleMouseWheelOrGestureEvent(FSlateApplication& SlateApp, const FPointerEvent& InWheelEvent, const FPointerEvent* InGestureEvent) override { return CanEatInput(); }
+	virtual bool HandleMotionDetectedEvent(FSlateApplication& SlateApp, const FMotionEvent& MotionEvent) override { return CanEatInput(); }
+	//~End of IInputProcess interface
+};
 
 // Sets default values for this component's properties
 UNarrativeComponent::UNarrativeComponent()
@@ -1191,3 +1218,20 @@ void UNarrativeComponent::SetSharedNarrativeComponent(UNarrativeComponent* NewSh
 }
 
 
+void UNarrativeComponent::StartBlockingInput()
+{
+	if (!InputPreProcessor.IsValid())
+	{
+		InputPreProcessor = MakeShareable<FLoadingScreenInputPreProcessor>(new FLoadingScreenInputPreProcessor());
+		FSlateApplication::Get().RegisterInputPreProcessor(InputPreProcessor, 0);
+	}
+}
+
+void UNarrativeComponent::StopBlockingInput()
+{
+	if (InputPreProcessor.IsValid())
+	{
+		FSlateApplication::Get().UnregisterInputPreProcessor(InputPreProcessor);
+		InputPreProcessor.Reset();
+	}
+}

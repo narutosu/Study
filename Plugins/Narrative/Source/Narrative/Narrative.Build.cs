@@ -43,7 +43,8 @@ public class Narrative : ModuleRules
 				"UMG",
 				"Slate",
 				"SlateCore",
-				"LevelSequence"
+				"LevelSequence",
+				"InputCore",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
